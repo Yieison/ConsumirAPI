@@ -32,6 +32,7 @@ function fetchData(page) {
         for (let i = startIndex; i < endIndex && i < data.length; i++) {
           const item = data[i];
           const row = document.createElement('tr');
+          const cell0 = document.createElement('td'); // Nueva celda para el número de fila
           const cell1 = document.createElement('td');
           const cell2 = document.createElement('td');
           const cell3 = document.createElement('td');
@@ -40,6 +41,7 @@ function fetchData(page) {
           const cell6 = document.createElement('td');
           const cell7 = document.createElement('td');
 
+          cell0.textContent = i + 1; // Número de comercio
           cell1.textContent = item.razonsocial;
           cell2.textContent = item.nit;
           cell3.textContent = item.renovacion;
@@ -48,6 +50,7 @@ function fetchData(page) {
           cell6.textContent = item.ciiu;
           cell7.textContent = item.tamano;
 
+          row.appendChild(cell0);
           row.appendChild(cell1);
           row.appendChild(cell2);
           row.appendChild(cell3);
