@@ -1,5 +1,5 @@
 const apiUrl = 'https://www.datos.gov.co/resource/kxhm-gdhk.json';
-const dataPerPage = 20;
+const dataPerPage = 13;
 let currentPage = 1;
 
 const dataTable = document.getElementById('data-table');
@@ -25,6 +25,9 @@ function fetchData(page) {
         // Limpiar cualquier contenido previo en el cuerpo de la tabla
         dataBody.innerHTML = '';
 
+        totalRecords = data.length;
+        const totalPages = Math.ceil(totalRecords / dataPerPage);
+        
         // Mostrar los datos de la API en la página actual
         for (let i = startIndex; i < endIndex && i < data.length; i++) {
           const item = data[i];
@@ -56,8 +59,8 @@ function fetchData(page) {
           dataBody.appendChild(row);
         }
 
-        // Actualizar el indicador de página actual
-        pageIndicator.textContent = `Página ${page}`;
+        // Actualizar el indicador de página actual del total de páginas
+        pageIndicator.textContent = `Página ${page} de ${totalPages}`;
 
         // Habilitar o deshabilitar los botones de navegación
         prevButton.disabled = page === 1;
