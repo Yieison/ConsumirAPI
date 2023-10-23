@@ -1,8 +1,7 @@
 /* Estilo para la tabla */
 table {
-    border-collapse: collapse;
     width: 100%;
-    max-width: 800px;
+    max-width: 1636px; /* Ajusta el ancho de la tabla según tus necesidades */
     margin: 0 auto;
 }
 
@@ -24,4 +23,34 @@ td {
 /* Estilo para filas impares (opcional) */
 tr:nth-child(odd) {
     background-color: #f2f2f2;
+}
+
+/* Estilo para la sección de paginación */
+#pagination {
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* Estilo para los botones de navegación */
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #2579b9;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
 }
